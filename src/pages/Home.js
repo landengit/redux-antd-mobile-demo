@@ -5,17 +5,16 @@ import { FormattedMessage } from 'react-intl'
 import { Header } from './common'
 
 class Home extends React.Component {
-
   render() {
     return (
       <div>
-        <Header header={<FormattedMessage id="home"/>} showBack showMore/>
-        <ul style={{fontSize: '20px'}}>
+        <Header header={<FormattedMessage id="home" />} showBack showMore />
+        <ul style={{ fontSize: '20px' }}>
           <li>
-            <Link to="/">Home</Link> 
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/clockRecord">打卡记录</Link> 
+            <Link to="/clockRecord">打卡记录</Link>
           </li>
           <li>
             <Link to="/counter">Counter</Link>

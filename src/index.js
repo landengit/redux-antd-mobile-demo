@@ -1,6 +1,6 @@
 /**
  * 页面入口
- * 
+ *
  * landenli
  */
 
@@ -15,7 +15,7 @@ import App from './store/app'
 import configureStore, { history } from './store/configureStore'
 import zh_cn from './i18n/zh_CN'
 import en_us from './i18n/en_US'
-import { LocaleProvider } from 'antd-mobile';
+import { LocaleProvider } from 'antd-mobile'
 import { LanguageTools } from './utils'
 
 // 加载国际化文件

@@ -1,0 +1,12 @@
+{
+  "editor.tabSize": 2, 
+  "vsicons.projectDetection.autoReload": true,
+  "workbench.iconTheme": "vscode-icons",
+  "git.confirmSync": false,
+  "workbench.welcome.enabled": false,
+  "window.zoomLevel": 0,
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "editor.formatOnPaste": false,
+  "prettier.semi": false
+}

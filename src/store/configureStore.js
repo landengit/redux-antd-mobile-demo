@@ -1,6 +1,6 @@
 /**
  * store
- * 
+ *
  * landenli
  */
 
@@ -17,11 +17,11 @@ export const history = createBrowserHistory()
 
 // immutable数据需要改写logger的stateTransformer
 const logger = createLogger({
-  stateTransformer: (state) => {
+  stateTransformer: state => {
     if (Iterable.isIterable(state)) return state.toJS()
-    else return state;
+    else return state
   }
-});
+})
 
 export default function configureStore(preloadedState) {
   const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -37,8 +37,8 @@ export default function configureStore(preloadedState) {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
-      store.replaceReducer(createRootReducer(history));
-    });
+      store.replaceReducer(createRootReducer(history))
+    })
   }
 
   return store
