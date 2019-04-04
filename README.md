@@ -1,6 +1,6 @@
 # react16 + redux6 + webpack4 + redux-thunk2 + antd-mobile2 + connected-react-router + immutable
 
-支持国际化、热更新、less 等等
+支持国际化、热更新、less、mockData 等等
 
 ## Install
 ```bash
@@ -50,7 +50,7 @@ npm run dev
 ├── readMe   (！！！！！！读我)
 ```
 
-# React/JSX 编码规范
+# 编码规范
 
 *结合于Airbnb，算是最合理的React/JSX编码规范之一了*
 
