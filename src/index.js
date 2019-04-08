@@ -16,8 +16,8 @@ import App from './store/app'
 import configureStore, { history } from './store/configureStore'
 import zh_cn from './i18n/zh_CN'
 import en_us from './i18n/en_US'
-import { LanguageTools } from './utils'
-import Config from '../config/config'
+import { LanguageTools } from 'utils'
+import Config from 'configs'
 
 // 加载国际化文件
 addLocaleData([...itLocaleData, ...zhLocaleData, en_us])

@@ -6,16 +6,25 @@
 
 import React from 'react'
 import { Route, Switch } from 'react-router'
+import { AsyncComponentTools } from 'utils'
 import Home from '../pages/Home'
-import Counter from '../pages/counter'
 import NoMatch from '../pages/NoMatch'
-import ClockRecord from '../pages/clockRecord'
 
 const routes = (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route path="/counter" component={Counter} />
-    <Route path="/clockRecord" component={ClockRecord} />
+    <Route
+      path="/counter"
+      component={AsyncComponentTools.getAsyncComponent(() =>
+        import(/* webpackChunkName: 'counter' */ '../pages/counter')
+      )}
+    />
+    <Route
+      path="/clockRecord"
+      component={AsyncComponentTools.getAsyncComponent(() =>
+        import(/* webpackChunkName: 'clockRecord' */ '../pages/clockRecord')
+      )}
+    />
     <Route component={NoMatch} />
   </Switch>
 )

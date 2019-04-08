@@ -1,33 +1,37 @@
 const path = require('path')
 const webpack = require('webpack')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
-  entry: [
-    'webpack-hot-middleware/client',
-    path.resolve('src/index.js')
-  ],
+  entry: ['webpack-hot-middleware/client', path.resolve('src/index.js')],
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
-    chunkFilename: `bundle-[name]-[hash:5].js`
+    chunkFilename: `bundle-[name]-chunk.js`
+  },
+  resolve: {
+    alias: {
+      configs$: path.resolve(__dirname, '../config/config.js'),
+      utils$: path.resolve(__dirname, '../src/utils/index.js'),
+      common$: path.resolve(__dirname, '../src/pages/common/index.js')
+    }
   },
   module: {
     rules: [
       {
-				test: /\.(js|jsx)$/,
-				exclude: [path.resolve(__dirname, 'node_modules')],
-				enforce: 'pre',
-				use: {
-					loader: 'babel-loader',
-					options: {
-						cacheDirectory: true
-					}
-				}
-			},
+        test: /\.(js|jsx)$/,
+        exclude: [path.resolve(__dirname, 'node_modules')],
+        enforce: 'pre',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
+        }
+      },
       {
         test: /\.css$/,
         use: [
@@ -39,7 +43,7 @@ module.exports = {
               publicPath: '../'
             }
           },
-          "css-loader"
+          'css-loader'
         ]
       },
       {
@@ -55,30 +59,28 @@ module.exports = {
           }
         ]
       }
-    ],
+    ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+      filename: '[name].css',
+      chunkFilename: '[id].css'
     }),
-		new HtmlWebpackPlugin({
-			alwaysWriteToDisk: true,
-			template: 'index.html',
-			filename: path.resolve(__dirname, './index.html')
-		}),
+    new HtmlWebpackPlugin({
+      alwaysWriteToDisk: true,
+      template: 'index.html',
+      filename: path.resolve(__dirname, '../dist/index.html')
+    }),
     new webpack.DefinePlugin({
       __DEBUG__: true,
       __DEV__: true,
       'process.env.NODE_ENV': JSON.stringify('env')
-    }),
+    })
   ],
   resolveLoader: {
-    modules: [
-      'node_modules',
-    ],
-  },
+    modules: ['node_modules']
+  }
 }
