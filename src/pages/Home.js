@@ -8,7 +8,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Header header={<FormattedMessage id="home" />} showBack showMore />
+        <Header header={<FormattedMessage id="app.home.title" />} showBack showMore />
         <ul style={{ fontSize: '20px' }}>
           <li>
             <Link to="/">Home</Link>

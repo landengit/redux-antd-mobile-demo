@@ -63,7 +63,7 @@ class ClockRecord extends React.Component {
     return (
       <div className="clockRecord">
         <Header
-          header={<FormattedMessage id="clockRecord" />}
+          header={<FormattedMessage id="app.clockRecord.title" />}
           showBack
           showMore
         />
@@ -116,7 +116,6 @@ class ClockRecord extends React.Component {
     if (this.state.isLoading && !this.state.hasMore) {
       return
     }
-    console.log('reach end', event)
     this.setState({ isLoading: true })
     this.props.getClockRecordList()
   }

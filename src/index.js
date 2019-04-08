@@ -11,15 +11,16 @@ import ReactDOM from 'react-dom'
 import { IntlProvider, addLocaleData } from 'react-intl'
 import itLocaleData from 'react-intl/locale-data/it'
 import zhLocaleData from 'react-intl/locale-data/zh'
+import { LocaleProvider } from 'antd-mobile'
 import App from './store/app'
 import configureStore, { history } from './store/configureStore'
 import zh_cn from './i18n/zh_CN'
 import en_us from './i18n/en_US'
-import { LocaleProvider } from 'antd-mobile'
 import { LanguageTools } from './utils'
+import Config from '../config/config'
 
 // 加载国际化文件
-addLocaleData([...itLocaleData, ...zhLocaleData, zh_cn, en_us])
+addLocaleData([...itLocaleData, ...zhLocaleData, en_us])
 
 // store初始化
 const initialState = Immutable.Map()
@@ -31,7 +32,7 @@ const antdLanguage = LanguageTools.chooseAntdLanguage()
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <IntlProvider locale="zh" messages={intlLanguage}>
+      <IntlProvider locale={LanguageTools.getLanguage()} messages={intlLanguage}>
         <LocaleProvider locale={antdLanguage}>
           <App history={history} />
         </LocaleProvider>
