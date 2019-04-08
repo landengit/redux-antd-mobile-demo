@@ -50,7 +50,34 @@ npm run dev
 ├── readMe   (！！！！！！读我)
 ```
 
-# 编码规范
+## mock
+请求自动支持mock，mock数据放在mock文件夹对应的业务文件夹。开发环境默认走mock（可在config修改），也可单独控制请求是否走mock。
+```jsx
+export async function getList(params) {
+  params.getMockData = true
+  return Fetch.get(`/getList`, params)
+}
+```
+
+## i18n
+项目支持国际化，采用的是react-intl，语言数据放在i18n文件夹对应的业务文件夹，开发环境默认走zh（可在config修改），生产环境强制走系统语言。
+业务中使用：
+```jsx
+import { FormattedMessage } from 'react-intl'
+
+class ClockRecord extends React.Component {
+  // 组件方式
+  <FormattedMessage id="app.clockRecord.title" />
+
+  // 手动调用
+  this.props.intl.formatMessage({id: 'app.clockRecord.title'})
+}
+
+export default injectIntl(ClockRecord)
+
+```
+
+## 编码规范
 
 *结合于Airbnb，算是最合理的React/JSX编码规范之一了*
 
@@ -77,7 +104,6 @@ npm run dev
 ## Basic Rules 基本规范
 
   - 每个文件只写一个模块.
-    - 但是多个[无状态模块](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)可以放在单个文件中. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
   - 推荐使用JSX语法.
   - 不要使用 `React.createElement`，除非从一个非JSX的文件中初始化你的app.
 

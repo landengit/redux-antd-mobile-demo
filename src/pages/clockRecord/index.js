@@ -8,7 +8,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { ListView } from 'antd-mobile'
 import { connect } from 'react-redux'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
 
 import { Header } from 'commons'
 import { getClockRecordList } from './redux/action'
@@ -60,6 +60,8 @@ class ClockRecord extends React.Component {
   }
 
   render() {
+    // 手动调用formatMessage
+    console.log('this.props', this.props.intl.formatMessage({id: 'app.clockRecord.title'}))
     return (
       <div className="clockRecord">
         <Header
@@ -135,4 +137,4 @@ class ClockRecord extends React.Component {
   }
 }
 
-export default ClockRecord
+export default injectIntl(ClockRecord)
