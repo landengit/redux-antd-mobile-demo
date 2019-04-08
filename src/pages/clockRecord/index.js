@@ -61,7 +61,10 @@ class ClockRecord extends React.Component {
 
   render() {
     // 手动调用formatMessage
-    console.log('this.props', this.props.intl.formatMessage({id: 'app.clockRecord.title'}))
+    console.log(
+      'this.props',
+      this.props.intl.formatMessage({ id: 'app.clockRecord.title' })
+    )
     return (
       <div className="clockRecord">
         <Header
