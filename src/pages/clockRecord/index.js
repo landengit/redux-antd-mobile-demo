@@ -10,7 +10,7 @@ import { ListView } from 'antd-mobile'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 
-import { Header } from '../common'
+import { Header } from 'commons'
 import { getClockRecordList } from './redux/action'
 import './index.less'
 

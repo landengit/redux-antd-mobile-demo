@@ -1,4 +1,4 @@
-import { Fetch } from '../common'
+import { Fetch } from 'commons'
 
 /**
  * 查询打卡记录

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FormattedMessage } from 'react-intl'
 
-import { Header } from './common'
+import { Header } from 'commons'
 
 class Home extends React.Component {
   render() {

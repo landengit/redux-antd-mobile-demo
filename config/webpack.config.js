@@ -12,13 +12,13 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle-[name].js',
     chunkFilename: `bundle-[name]-chunk.js`,
-		publicPath: '/build/'
+    publicPath: '/build/'
   },
   resolve: {
     alias: {
       configs$: path.resolve(__dirname, '../config/config.js'),
       utils$: path.resolve(__dirname, '../src/utils/index.js'),
-      common$: path.resolve(__dirname, '../src/pages/common/index.js')
+      commons$: path.resolve(__dirname, '../src/pages/commons/index.js')
     }
   },
   module: {
@@ -40,8 +40,6 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
               publicPath: '../'
             }
           },
@@ -67,8 +65,6 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: '[name].css',
       chunkFilename: '[id].css'
     }),
@@ -107,9 +103,9 @@ module.exports = {
   optimization: {
     // 分包
     splitChunks: {
-        chunks: 'all',
-        minSize: 30000,
-        maxSize: 0,
+      chunks: 'all',
+      minSize: 30000,
+      maxSize: 0
     },
     minimizer: [
       new UglifyJsPlugin({
