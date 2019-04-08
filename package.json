@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "node server.js",
-    "build": "webpack --config config/webpack.config.js",
-    "stats": "webpack --profile --json > stats.json"
+    "build": "webpack --config config/webpack.config.js"
   },
   "author": "Supasate Choochaisri",
   "license": "MIT",

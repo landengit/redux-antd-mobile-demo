@@ -7,7 +7,7 @@
 import { combineReducers } from 'redux-immutable'
 import { connectRouter } from 'connected-react-router/immutable'
 import counterReducer from '../pages/counter/redux/reducer'
-import clockRecordReducer from '../pages/clockRecord/redux/reducer'
+import clockRecordReducer from '../pages/clock/record/redux/reducer'
 
 const rootReducer = history =>
   combineReducers({

@@ -1,4 +1,4 @@
-# react16 + redux6 + webpack4 + redux-thunk2 + antd-mobile2 + connected-react-router + immutable
+# react16.8 + redux6 + webpack4 + redux-thunk2 + antd-mobile2 + connected-react-router + immutable
 
 支持国际化、热更新、less、mockData 等等
 

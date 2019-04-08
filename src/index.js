@@ -12,8 +12,8 @@ import { IntlProvider, addLocaleData } from 'react-intl'
 import itLocaleData from 'react-intl/locale-data/it'
 import zhLocaleData from 'react-intl/locale-data/zh'
 import { LocaleProvider } from 'antd-mobile'
-import App from './store/app'
-import configureStore, { history } from './store/configureStore'
+import App from './connect/app'
+import configureStore, { history } from './connect/configureStore'
 import zh_cn from './i18n/zh_CN'
 import en_us from './i18n/en_US'
 import { LanguageTools } from 'utils'
@@ -47,7 +47,7 @@ render()
 // Hot reloading
 if (module.hot) {
   // Reload components
-  module.hot.accept('./store/app', () => {
+  module.hot.accept('./connect/app', () => {
     render()
   })
 }

@@ -22,7 +22,7 @@ const routes = (
     <Route
       path="/clockRecord"
       component={AsyncComponentTools.getAsyncComponent(() =>
-        import(/* webpackChunkName: 'clockRecord' */ '../pages/clockRecord')
+        import(/* webpackChunkName: 'clockRecord' */ '../pages/clock/record')
       )}
     />
     <Route component={NoMatch} />
